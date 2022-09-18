@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{%block title %}
+Add Post
+{% endblock %}
+
+
+{% block css %}
+h1  {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+
+h5, p {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+
+label {
+    color: white;
+    font-family: sans-serif;
+    font-weight: light;
+    font-size: 18px;
+    }
+
+{% endblock %}
+
+<!-- NAVIGATIONAL BAR -->
+
+{% block item %}http://127.0.0.1:8000/posts/{% endblock %}
+{% block active %}Posts / Add{% endblock %}
+
+{% block link2 %}#{% endblock %}
+{% block item2 %}link{% endblock %}
+
+{% block link3 %}#{% endblock %}
+{% block item3 %}link{% endblock %}
+
+
+<!-- BODY -->
+
+{% block content %}
+
+<h1>Add Post</h1>
+<br>
+
+
+<form method="POST">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button>Post</button>
+</form>
+{% endblock %}

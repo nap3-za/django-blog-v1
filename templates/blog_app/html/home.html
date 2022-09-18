@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{%block title %}
+Home page
+{% endblock %}
+
+
+{% block css %}
+h1 {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+    
+h3, h5, p {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+{% endblock %}
+
+<!-- NAVIGATIONAL BAR -->
+
+{% block link %}http://127.0.0.1:8000/posts/{% endblock %}
+{% block active %}Posts{% endblock %}
+
+{% block link2 %}#{% endblock %}
+{% block item2 %}link{% endblock %}
+
+{% block link3 %}http://127.0.0.1:8000/posts/add/{% endblock %}
+{% block item3 %}Create A Post{% endblock %}
+
+
+<!-- BODY -->
+
+{% block content %}
+<h1>Posts</h1>
+
+{% for post in object_list %}
+
+    <h3><a href="{% url 'postview' post.pk %}">{{ post.title }}</a></h3>
+    <p>{{ post.content }}</p>
+    <h5>Author: {{ post.author.first_name }} {{ post.author.last_name }}</h5>
+
+{% endfor %}
+{% endblock %}

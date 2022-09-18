@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{%block title %}
+Edit Post
+{% endblock %}
+
+
+{% block css %}
+h1  {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+
+h5, p {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+
+label {
+    color: white;
+    font-family: sans-serif;
+    font-weight: light;
+    font-size: 18px;
+    }
+
+{% endblock %}
+
+<!-- NAVIGATIONAL BAR -->
+
+{% block item %}http://127.0.0.1:8000/posts/{{ post.pk }}/{% endblock %}
+{% block active %}Posts / {{ post.title }} / Update{% endblock %}
+
+{% block link2 %}#{% endblock %}
+{% block item2 %}link{% endblock %}
+
+{% block link3 %}#{% endblock %}
+{% block item3 %}link{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Update Post</h1>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+
+    <a href="http://127.0.0.1:8000/posts/{{ post.pk }}/"><button type="button">Back</button></a>
+    <button>Update</button>
+    <a href="{% url 'deletepostview' post.pk %}"><button type="button">Delete</button></a>
+</form>
+{% endblock %}
+
+
+
+
+
+
+

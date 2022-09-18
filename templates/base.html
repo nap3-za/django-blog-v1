@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <style>
+            {% include 'blog_app/css/css.css' %}
+            {% include 'blog_app/css/navbar.css' %}
+            {% block css %}
+            {% endblock %}
+        </style>
+        <script>{% block js %}{% endblock %}</script>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+        <nav class="navbar">
+            <p><a href="{% block link %}{% endblock %}" class="one">{% block active %}{% endblock %}</a>
+            <a href="{% block link2 %}{% endblock %}" class="zero">{% block item2 %}{% endblock %}</a>
+            <a href="{% block link3 %}{% endblock %}" class="zero">{% block item3 %}{% endblock %}</a></p>
+        </nav>
+        </div>
+        <div id="body">  
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

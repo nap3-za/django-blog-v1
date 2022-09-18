@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{%block title %}
+{{ post.page_title }}
+{% endblock %}
+
+
+{% block css %}
+h2  {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+
+h5, p {
+    font-family: sans-serif;
+    color: #FFFAFA;
+    }
+{% endblock %}
+
+
+<!-- NAVIGATIONAL BAR -->
+
+{% block link %}http://127.0.0.1:8000/posts/{% endblock %}
+{% block active %}Post / {{ post.title }}{% endblock %}
+
+{% block link2 %}#{% endblock %}
+{% block item2 %}link{% endblock %}
+
+{% block link3 %}#{% endblock %}
+{% block item3 %}link{% endblock %}
+
+
+{% block content %}
+
+<h2>{{ post.title }}</h2>
+
+<p>{{ post.content }}</p>
+<h5>Author: {{ post.author.first_name }} {{ post.author.last_name }}</h5>
+
+<a href="{% url 'homeview' %}"><button type="button">Back</button></a>
+<a href="{% url 'editpostview' post.pk %}"><button type="button">Update</button></a>
+<a href="{% url 'deletepostview' post.pk %}"><button type="button">Delete</button></a>
+{% endblock %}

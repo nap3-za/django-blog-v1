@@ -1,0 +1,24 @@
+.container {
+    border-left: 0px solid rgb(0, 255, 0);
+    border-top: 3px solid rgb(0, 255, 0);
+    border-right: 0px solid rgb(0, 255, 0);
+    border-bottom: 0px solid rgb(27, 27, 27);
+    padding: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+.one {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+}
+.zero {
+    float: right;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-decoration: none;
+    color: white;
+}
+
